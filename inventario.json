@@ -1,0 +1,247 @@
+[
+  {
+    "_id": "48afb713-ede3-4589-bd45-ae8f0f3e4b65",
+    "producto": "Arroz Diana 1Kg",
+    "categoria": "Granos",
+    "precio_unitario": 3200,
+    "stock_actual": 114
+  },
+  {
+    "_id": "7f64eb43-05dc-443f-8263-0f574743472e",
+    "producto": "Aceite Premier 1000ml",
+    "categoria": "Aceites",
+    "precio_unitario": 11800,
+    "stock_actual": 141
+  },
+  {
+    "_id": "ade18d6c-f456-4b31-897b-c9163ebe6fc1",
+    "producto": "Leche Colanta 1L",
+    "categoria": "Lácteos",
+    "precio_unitario": 4500,
+    "stock_actual": 98
+  },
+  {
+    "_id": "c693d646-8bf5-438d-9536-3973c5d71f6c",
+    "producto": "Huevos Kikes x12",
+    "categoria": "Huevos",
+    "precio_unitario": 13600,
+    "stock_actual": 106
+  },
+  {
+    "_id": "a86b1a30-4c7b-47a1-9d0e-70db99deca54",
+    "producto": "Pan Bimbo Tajado",
+    "categoria": "Panadería",
+    "precio_unitario": 3800,
+    "stock_actual": 183
+  },
+  {
+    "_id": "6d76011d-ecab-4dd8-b9b5-ca352d4c056a",
+    "producto": "Café Águila Roja 500g",
+    "categoria": "Cafés",
+    "precio_unitario": 14800,
+    "stock_actual": 123
+  },
+  {
+    "_id": "639318c8-941b-4ed6-b8d8-8119c3eb72f0",
+    "producto": "Frijol Cargamanto Rojo 500g",
+    "categoria": "Granos",
+    "precio_unitario": 5200,
+    "stock_actual": 168
+  },
+  {
+    "_id": "60666d46-c4b8-4c2f-a32d-f9534d033b5a",
+    "producto": "Azúcar Manuelita 1Kg",
+    "categoria": "Endulzantes",
+    "precio_unitario": 3600,
+    "stock_actual": 189
+  },
+  {
+    "_id": "0be33acb-cc75-4707-8dff-f9d5d5a2c8b8",
+    "producto": "Queso Campesino Alpina 250g",
+    "categoria": "Lácteos",
+    "precio_unitario": 8900,
+    "stock_actual": 98
+  },
+  {
+    "_id": "19255e48-b8c6-4ebe-9559-d362a0c111af",
+    "producto": "Arequipe Alpina 250g",
+    "categoria": "Dulces",
+    "precio_unitario": 6200,
+    "stock_actual": 139
+  },
+  {
+    "_id": "421e4c1a-ecb8-4708-8329-d540064f9c7f",
+    "producto": "Galletas Festival x6",
+    "categoria": "Dulces",
+    "precio_unitario": 2500,
+    "stock_actual": 186
+  },
+  {
+    "_id": "b73805d8-33a4-41db-abc2-ac7a79062192",
+    "producto": "Atún Van Camps 170g",
+    "categoria": "Enlatados",
+    "precio_unitario": 5600,
+    "stock_actual": 120
+  },
+  {
+    "_id": "afbdeb35-d41f-4cf4-a42b-19dbc9753355",
+    "producto": "Sal Refisal 1Kg",
+    "categoria": "Condimentos",
+    "precio_unitario": 2300,
+    "stock_actual": 64
+  },
+  {
+    "_id": "918d3996-a110-4e42-a1aa-3a3436d83564",
+    "producto": "Pasta Doria 500g",
+    "categoria": "Pasta",
+    "precio_unitario": 3100,
+    "stock_actual": 76
+  },
+  {
+    "_id": "6a647ec4-8b72-485a-8961-167fff8f2fe2",
+    "producto": "Salsa de Tomate Fruco 400g",
+    "categoria": "Salsas",
+    "precio_unitario": 4100,
+    "stock_actual": 36
+  },
+  {
+    "_id": "15202291-6cac-4ee2-9175-0e1746bda0a8",
+    "producto": "Harina PAN 1Kg",
+    "categoria": "Harinas",
+    "precio_unitario": 5400,
+    "stock_actual": 33
+  },
+  {
+    "_id": "525305c8-325a-48a6-9f27-ade7aa4d54d5",
+    "producto": "Milo 400g",
+    "categoria": "Bebidas",
+    "precio_unitario": 7800,
+    "stock_actual": 185
+  },
+  {
+    "_id": "9d6e8829-e327-4767-952b-3f7120104db6",
+    "producto": "Coca-Cola 1.5L",
+    "categoria": "Bebidas",
+    "precio_unitario": 5200,
+    "stock_actual": 170
+  },
+  {
+    "_id": "5b3030c8-f6b7-4452-b660-bfbe6103cb07",
+    "producto": "Jugo Hit 1L",
+    "categoria": "Bebidas",
+    "precio_unitario": 3600,
+    "stock_actual": 172
+  },
+  {
+    "_id": "e37faabe-48a8-409e-910d-3907e324ee2c",
+    "producto": "Agua Cristal 600ml",
+    "categoria": "Bebidas",
+    "precio_unitario": 2200,
+    "stock_actual": 68
+  },
+  {
+    "_id": "86aec98b-2e19-4350-9e47-88a008874103",
+    "producto": "Detergente Ariel 1Kg",
+    "categoria": "Aseo",
+    "precio_unitario": 9200,
+    "stock_actual": 67
+  },
+  {
+    "_id": "160ebc58-50bc-445c-911c-7652e9f33968",
+    "producto": "Jabón Rey Barra",
+    "categoria": "Aseo",
+    "precio_unitario": 1800,
+    "stock_actual": 53
+  },
+  {
+    "_id": "e77c2d6b-3f36-4c71-b066-8b4f56687adc",
+    "producto": "Shampoo Savital 750ml",
+    "categoria": "Aseo",
+    "precio_unitario": 10500,
+    "stock_actual": 163
+  },
+  {
+    "_id": "270aefdf-a7b6-4213-9e66-64b42c8825e8",
+    "producto": "Suavizante Ensueño 1L",
+    "categoria": "Aseo",
+    "precio_unitario": 8900,
+    "stock_actual": 103
+  },
+  {
+    "_id": "652d59b2-b393-419e-981a-d4ba7bb3456d",
+    "producto": "Clorox 1L",
+    "categoria": "Aseo",
+    "precio_unitario": 6500,
+    "stock_actual": 165
+  },
+  {
+    "_id": "02414ea0-f01c-452d-bd48-439041342f49",
+    "producto": "Papel Higiénico Familia x4",
+    "categoria": "Aseo",
+    "precio_unitario": 8200,
+    "stock_actual": 196
+  },
+  {
+    "_id": "fee3fc7c-6b4d-4558-9b7e-6beb2744ce1b",
+    "producto": "Servilletas Familia x100",
+    "categoria": "Aseo",
+    "precio_unitario": 3600,
+    "stock_actual": 184
+  },
+  {
+    "_id": "b2c37fd5-3e5e-4183-91fa-2223e7e1964c",
+    "producto": "Cepillo Dental Colgate",
+    "categoria": "Aseo",
+    "precio_unitario": 5100,
+    "stock_actual": 118
+  },
+  {
+    "_id": "739d154b-6ec7-4261-acea-5fdeb03fa2d4",
+    "producto": "Crema Dental Colgate 150ml",
+    "categoria": "Aseo",
+    "precio_unitario": 7800,
+    "stock_actual": 127
+  },
+  {
+    "_id": "70920c2b-e1da-45e3-82c0-0eb879d261b5",
+    "producto": "Jabón Protex 3un",
+    "categoria": "Aseo",
+    "precio_unitario": 7500,
+    "stock_actual": 126
+  },
+  {
+    "_id": "0eba80aa-6911-4dda-b79b-bc89f184370d",
+    "producto": "Banano 1Kg",
+    "categoria": "Frutas",
+    "precio_unitario": 2800,
+    "stock_actual": 190
+  },
+  {
+    "_id": "a5af066a-b2f9-4073-aca3-ffbb9298824d",
+    "producto": "Manzana Roja 1Kg",
+    "categoria": "Frutas",
+    "precio_unitario": 5800,
+    "stock_actual": 23
+  },
+  {
+    "_id": "dc775faa-f562-472a-ae4f-4e5399f5ce6d",
+    "producto": "Papa Criolla 1Kg",
+    "categoria": "Verduras",
+    "precio_unitario": 4200,
+    "stock_actual": 174
+  },
+  {
+    "_id": "f1af2cb6-733c-498b-9895-d5b39c2baeeb",
+    "producto": "Cebolla Cabezona 1Kg",
+    "categoria": "Verduras",
+    "precio_unitario": 3000,
+    "stock_actual": 106
+  },
+  {
+    "_id": "53d2d106-bdce-4b09-af8d-ac02660936e9",
+    "producto": "Tomate Chonto 1Kg",
+    "categoria": "Verduras",
+    "precio_unitario": 3400,
+    "stock_actual": 41
+  }
+]

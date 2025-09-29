@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MongoDB Learning App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .hero-section {
+      padding: 60px 0;
+      color: white;
+      text-align: center;
+    }
+    .feature-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 20px 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #667eea;
+    }
+    .btn-custom {
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      color: white;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .btn-custom:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      color: white;
+    }
+    .concept-badge {
+      background: #f8f9fa;
+      border: 2px solid #e9ecef;
+      border-radius: 20px;
+      padding: 8px 16px;
+      margin: 5px;
+      display: inline-block;
+      font-size: 0.9rem;
+      color: #495057;
+    }
+    .footer {
+      background: rgba(255,255,255,0.1);
+      color: white;
+      padding: 40px 0;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero-section">
+    <div class="container">
+      <h1 class="display-4 fw-bold mb-4">
+        <i class="fas fa-database"></i> MongoDB Learning App
+      </h1>
+      <p class="lead mb-5">
+        Aprende MongoDB de forma práctica con consultas geoespaciales y filtros de productos
+      </p>
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-8">
+          <div class="d-flex flex-wrap justify-content-center">
+            <span class="concept-badge">Consultas GeoJSON</span>
+            <span class="concept-badge">Operadores de Filtro</span>
+            <span class="concept-badge">Agregaciones</span>
+            <span class="concept-badge">Índices Geoespaciales</span>
+            <span class="concept-badge">Búsqueda por Texto</span>
+            <span class="concept-badge">Pipeline de Agregación</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <!-- Módulo Geoespacial -->
+      <div class="col-lg-6">
+        <div class="feature-card">
+          <div class="text-center">
+            <i class="fas fa-map-marked-alt feature-icon"></i>
+            <h3 class="mb-3">Consultas Geoespaciales</h3>
+            <p class="text-muted mb-4">
+              Explora el uso de MongoDB con datos geográficos. Visualiza usuarios en un mapa interactivo
+              y aprende sobre consultas de proximidad con GeoJSON.
+            </p>
+            
+            <div class="mb-4">
+              <h6 class="text-primary">Conceptos que aprenderás:</h6>
+              <ul class="list-unstyled text-start">
+                <li><i class="fas fa-check text-success me-2"></i>Índices 2dsphere</li>
+                <li><i class="fas fa-check text-success me-2"></i>Operador $near</li>
+                <li><i class="fas fa-check text-success me-2"></i>Consultas $maxDistance</li>
+                <li><i class="fas fa-check text-success me-2"></i>Puntos GeoJSON</li>
+              </ul>
+            </div>
+
+            <a href="/" class="btn btn-custom">
+              <i class="fas fa-rocket me-2"></i>Explorar Mapa
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Módulo Catálogo -->
+      <div class="col-lg-6">
+        <div class="feature-card">
+          <div class="text-center">
+            <i class="fas fa-filter feature-icon"></i>
+            <h3 class="mb-3">Filtros y Operadores</h3>
+            <p class="text-muted mb-4">
+              Domina los operadores de MongoDB con un catálogo interactivo de productos.
+              Aplica filtros complejos y observa las consultas generadas en tiempo real.
+            </p>
+            
+            <div class="mb-4">
+              <h6 class="text-primary">Operadores que dominarás:</h6>
+              <ul class="list-unstyled text-start">
+                <li><i class="fas fa-check text-success me-2"></i>$eq, $ne, $gt, $lt, $gte, $lte</li>
+                <li><i class="fas fa-check text-success me-2"></i>$regex para búsqueda de texto</li>
+                <li><i class="fas fa-check text-success me-2"></i>$and, $or para lógica compleja</li>
+                <li><i class="fas fa-check text-success me-2"></i>$sort, $limit para ordenamiento</li>
+              </ul>
+            </div>
+
+            <a href="/catalogo" class="btn btn-custom">
+              <i class="fas fa-shopping-cart me-2"></i>Explorar Catálogo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección de APIs Educativas -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="feature-card">
+          <div class="text-center mb-4">
+            <i class="fas fa-code feature-icon"></i>
+            <h3>APIs Educativas Disponibles</h3>
+            <p class="text-muted">Endpoints diseñados para aprender MongoDB paso a paso</p>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <h5 class="text-primary mb-3">
+                <i class="fas fa-map me-2"></i>APIs Geoespaciales
+              </h5>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <code class="bg-light p-1 rounded">GET /</code> - Mapa interactivo
+                </li>
+                <li class="mb-2">
+                  <code class="bg-light p-1 rounded">GET /cercanos/:id</code> - Usuarios cercanos
+                </li>
+                <li class="mb-2">
+                  <code class="bg-light p-1 rounded">GET /api/usuarios</code> - CRUD usuarios
+                </li>
+              </ul>
+            </div>
+            
+            <div class="col-md-6">
+              <h5 class="text-primary mb-3">
+                <i class="fas fa-filter me-2"></i>APIs de Filtros
+              </h5>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <code class="bg-light p-1 rounded">POST /api/productos/filtrar</code> - Filtros avanzados
+                </li>
+                <li class="mb-2">
+                  <code class="bg-light p-1 rounded">GET /api/productos/ejemplos-operadores</code> - Ejemplos
+                </li>
+                <li class="mb-2">
+                  <code class="bg-light p-1 rounded">GET /api/productos/estadisticas</code> - Agregaciones
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="text-center mt-4">
+            <a href="/api/productos/ejemplos-operadores" class="btn btn-outline-primary me-3" target="_blank">
+              <i class="fas fa-eye me-2"></i>Ver Ejemplos de Operadores
+            </a>
+            <a href="/api/productos/estadisticas" class="btn btn-outline-primary" target="_blank">
+              <i class="fas fa-chart-bar me-2"></i>Ver Estadísticas
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guía de Inicio -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="feature-card">
+          <div class="text-center mb-4">
+            <i class="fas fa-graduation-cap feature-icon"></i>
+            <h3>Guía de Inicio Rápido</h3>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-4 text-center mb-4">
+              <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                <span class="fw-bold fs-4">1</span>
+              </div>
+              <h5>Cargar Datos</h5>
+              <p class="text-muted">Ejecuta <code>npm run cargar-inventario</code> para cargar productos de ejemplo</p>
+            </div>
+            
+            <div class="col-md-4 text-center mb-4">
+              <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                <span class="fw-bold fs-4">2</span>
+              </div>
+              <h5>Explorar Filtros</h5>
+              <p class="text-muted">Usa el catálogo para experimentar con diferentes operadores de MongoDB</p>
+            </div>
+            
+            <div class="col-md-4 text-center mb-4">
+              <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                <span class="fw-bold fs-4">3</span>
+              </div>
+              <h5>Observar Consultas</h5>
+              <p class="text-muted">Revisa las consultas MongoDB generadas en tiempo real</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container text-center">
+      <p class="mb-0">
+        <i class="fas fa-graduation-cap me-2"></i>
+        Aplicación educativa para aprender MongoDB • Desarrollado para estudiantes de secundaria
+      </p>
+      <small class="text-muted">Versión 2.0 - Módulos: Geoespacial + Filtros</small>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

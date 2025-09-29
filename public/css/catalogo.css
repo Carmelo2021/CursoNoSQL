@@ -1,0 +1,232 @@
+/* ===== ESTILOS ESPECÍFICOS DEL CATÁLOGO ===== */
+
+/* Panel de filtros */
+.filter-panel {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+/* Grid de productos con Flexbox */
+.productos-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* Tarjetas de productos */
+.product-card {
+  background: white;
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  
+  /* Responsive flex-basis */
+  flex: 1 1 calc(25% - 20px); /* 4 productos por fila en desktop */
+  max-width: calc(25% - 20px);
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Header de la tarjeta */
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.product-category {
+  background: var(--secondary-color);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.product-stock {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Contenido de la tarjeta */
+.product-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dark-color);
+  margin-bottom: 15px;
+  line-height: 1.3;
+  flex-grow: 1;
+}
+
+/* Footer de la tarjeta */
+.product-footer {
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.product-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--success-color);
+  margin-bottom: 10px;
+}
+
+.product-stock-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+/* Estados de disponibilidad */
+.stock-status {
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.stock-status.bajo {
+  background: #ffebee;
+  color: var(--danger-color);
+}
+
+.stock-status.medio {
+  background: #fff3e0;
+  color: var(--warning-color);
+}
+
+.stock-status.alto {
+  background: #e8f5e8;
+  color: var(--success-color);
+}
+
+.stock-status.agotado {
+  background: #ffcdd2;
+  color: var(--danger-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .product-card {
+    flex: 1 1 calc(33.333% - 20px); /* 3 productos por fila en tablet grande */
+    max-width: calc(33.333% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    flex: 1 1 calc(50% - 20px); /* 2 productos por fila en tablet */
+    max-width: calc(50% - 20px);
+  }
+  
+  .productos-container {
+    gap: 15px;
+    padding: 15px 0;
+  }
+  
+  .product-card {
+    min-height: 250px;
+    padding: 15px;
+  }
+  
+  .product-name {
+    font-size: 1rem;
+  }
+  
+  .product-price {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    flex: 1 1 100%; /* 1 producto por fila en móvil */
+    max-width: 100%;
+  }
+  
+  .productos-container {
+    gap: 10px;
+    padding: 10px 0;
+  }
+}
+
+/* Loading y estados vacíos */
+.loading-products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  flex-direction: column;
+}
+
+.no-products {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6c757d;
+}
+
+.no-products i {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+/* Contador de resultados */
+.results-badge {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-card {
+  animation: fadeInUp 0.3s ease forwards;
+}
+
+/* Stagger animation para las tarjetas */
+.product-card:nth-child(1) { animation-delay: 0.1s; }
+.product-card:nth-child(2) { animation-delay: 0.2s; }
+.product-card:nth-child(3) { animation-delay: 0.3s; }
+.product-card:nth-child(4) { animation-delay: 0.4s; }

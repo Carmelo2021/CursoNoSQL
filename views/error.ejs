@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error - MongoDB Learning App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="/css/common.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .error-container {
+      background: white;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 600px;
+    }
+    .error-icon {
+      font-size: 4rem;
+      color: #dc3545;
+      margin-bottom: 20px;
+    }
+    .error-code {
+      font-size: 6rem;
+      font-weight: bold;
+      color: #667eea;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <i class="fas fa-exclamation-triangle error-icon"></i>
+    
+    <% if (typeof error !== 'undefined') { %>
+      <h1 class="error-code">Error</h1>
+      <h2 class="text-dark mb-3"><%= error %></h2>
+      
+      <% if (typeof details !== 'undefined') { %>
+        <div class="alert alert-danger">
+          <strong>Detalles:</strong> <%= details %>
+        </div>
+      <% } %>
+    <% } else { %>
+      <h1 class="error-code">404</h1>
+      <h2 class="text-dark mb-3">Página No Encontrada</h2>
+    <% } %>
+    
+    <p class="text-muted mb-4">
+      Lo sentimos, algo salió mal. La página que buscas no está disponible o ha ocurrido un error.
+    </p>
+    
+    <div class="d-flex justify-content-center gap-3 flex-wrap">
+      <a href="/" class="btn btn-primary">
+        <i class="fas fa-home me-2"></i>Ir al Inicio
+      </a>
+      <a href="/mapa" class="btn btn-outline-primary">
+        <i class="fas fa-map-marked-alt me-2"></i>Ver Mapa
+      </a>
+      <a href="/catalogo" class="btn btn-outline-primary">
+        <i class="fas fa-shopping-cart me-2"></i>Ver Catálogo
+      </a>
+    </div>
+    
+    <hr class="my-4">
+    
+    <div class="text-muted">
+      <small>
+        <i class="fas fa-graduation-cap me-1"></i>
+        MongoDB Learning App - Proyecto Educativo
+      </small>
+    </div>
+  </div>
+</body>
+</html>

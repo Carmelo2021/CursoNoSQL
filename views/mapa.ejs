@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>GeoApp Usuarios</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link href="/css/common.css" rel="stylesheet">
+  <link href="/css/mapa.css" rel="stylesheet">
+</head>
+<body>
+  <div class="map-main-container">
+    <div class="map-container">
+      <!-- Navegación del mapa -->
+      <div class="map-navigation">
+        <a href="/" class="map-nav-btn">
+          <i class="fas fa-home"></i> Inicio
+        </a>
+        <a href="/catalogo" class="map-nav-btn">
+          <i class="fas fa-shopping-cart"></i> Catálogo
+        </a>
+      </div>
+      <div id="map" class="map-leaflet"></div>
+    </div>
+    <div id="panel-lateral" class="map-panel-lateral">
+      <button id="close-panel" class="map-close-panel">&times;</button>
+      <div id="panel-content" class="map-panel-content"></div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    var map = L.map('map').setView([6.2518, -75.5636], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+    var markers = [];
+    var users = <%- JSON.stringify(users); %>;
+    users.forEach(function(user) {
+      var marker = L.marker([user.location.coordinates[1], user.location.coordinates[0]]).addTo(map);
+      marker.bindPopup(`<b>${user.nombre}</b><br>${user.correo}`).on('click', function() {
+        showPanel(user);
+        marker.openPopup();
+      });
+      markers.push({ marker, user });
+    });
+
+    // Panel lateral: retraído al inicio, se muestra al seleccionar usuario
+    var panelLateral = document.getElementById('panel-lateral');
+    document.getElementById('close-panel').onclick = function() {
+      panelLateral.classList.remove('active');
+    };
+
+    function showPanel(user) {
+      var radio = window.currentRadio || 5000;
+      document.getElementById('panel-content').innerHTML = `
+        <h3>${user.nombre}</h3>
+        <p><b>Correo:</b> ${user.correo}</p>
+        <button class='btn btn-info mb-2' onclick='showContact(${JSON.stringify(user)})'>Contactar</button>
+        <button class='btn btn-warning mb-2' onclick='showPromote(${JSON.stringify(user)}, ${radio})'>Promocionar</button>
+        <div class='mb-2'>
+          <label for='radioInput' class='form-label'>Radio de búsqueda (metros):</label>
+          <input type='number' id='radioInput' class='form-control' value='${radio}' min='100' max='20000' step='100' onchange='updateRadio(this.value, ${JSON.stringify(user)})'>
+        </div>
+        <div id='panel-extra'></div>
+      `;
+      window.currentUser = user;
+      panelLateral.classList.add('active');
+    }
+
+    window.showContact = function(user) {
+      document.getElementById('panel-extra').innerHTML = `
+        <form method='POST' action='/contactar'>
+          <input type='hidden' name='correo' value='${user.correo}'>
+          <input type='text' name='asunto' placeholder='Asunto' class='form-control mb-2'>
+          <textarea name='mensaje' placeholder='Mensaje' class='form-control mb-2'></textarea>
+          <button type='submit' class='btn btn-success'>Enviar</button>
+        </form>
+      `;
+    }
+
+    window.showPromote = function(user, radio) {
+      fetch(`/cercanos/${user._id}?radio=${radio}`)
+        .then(res => res.json())
+        .then(data => {
+          // Resalta marcadores cercanos
+          markers.forEach(m => {
+            m.marker.setIcon(new L.Icon.Default());
+            if (data.users.some(u => u._id === m.user._id)) {
+              m.marker.setIcon(new L.Icon({ iconUrl: 'https://cdn-icons-png.flaticon.com/512/684/684908.png', iconSize: [25,41], iconAnchor: [12,41] }));
+            }
+          });
+          document.getElementById('panel-extra').innerHTML = `
+            <form method='POST' action='/promocionar'>
+              <input type='text' name='correos' value='${data.correos.join(',')}' readonly class='form-control mb-2'>
+              <input type='text' name='asunto' placeholder='Asunto' class='form-control mb-2'>
+              <textarea name='mensaje' placeholder='Mensaje' class='form-control mb-2'></textarea>
+              <button type='submit' class='btn btn-success'>Enviar</button>
+            </form>
+          `;
+        });
+    }
+
+    window.updateRadio = function(value, user) {
+      window.currentRadio = value;
+      showPromote(user, value);
+    }
+  </script>
+</body>
+</html>
