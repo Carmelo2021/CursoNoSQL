@@ -224,7 +224,6 @@
       
       // Mostrar indicador de carga
       document.getElementById('loadingIndicator').style.display = 'block';
-      //document.getElementById('productosGrid').style.display = 'none';
       document.getElementById('noResults').style.display = 'none';
       
       // Actualizar display de query inicial
@@ -267,7 +266,6 @@
     function aplicarFiltros() {
       // Mostrar indicador de carga
       document.getElementById('loadingIndicator').style.display = 'block';
-    //  document.getElementById('productosGrid').style.display = 'none';
       document.getElementById('noResults').style.display = 'none';
 
       // Construir objeto de filtros
@@ -407,7 +405,8 @@
         return;
       }
 
-   //  grid.style.display = 'block';
+      // Restaurar el display original del grid (definido en CSS)
+      grid.style.display = '';
       grid.innerHTML = productos.map(producto => `
         <div class="product-card">
           <div class="product-header">
